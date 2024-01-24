@@ -1,0 +1,55 @@
+#breadcrumbs ul {
+    list-style: none;
+    padding: 10px;
+    background-color: #eee;
+}
+
+#breadcrumbs ul li {
+    display: inline;
+    margin-right: 5px;
+}
+
+
+.product-title {
+    text-align: center;
+    color: blue;
+}
+
+.product-image {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+
+}
+
+.product-options {
+    text-align: center;
+    margin-top: 20px;
+
+}
+
+.size-options {
+    margin-bottom: 10px;
+}
+
+.quantity {
+    margin-bottom: 10px;
+}
+
+.quantity-select {
+    padding: 5px;
+}
+
+.price {
+    font-size: 10;
+    font-weight: bold;
+}
+
+.add-to-bag {
+    background-color: seagreen;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
