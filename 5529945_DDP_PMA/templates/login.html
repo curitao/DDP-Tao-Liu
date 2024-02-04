@@ -1,0 +1,114 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static\css\styles.css" />
+    <link rel="stylesheet" href="static\css\iconfont.css" />
+    <title>login</title>
+</head>
+
+<body>
+    <div id="bigBox">
+        <h1>LOGIN</h1>
+        <div class="inputBox">
+            <div class="inputText">
+                <span class="iconfont icon-nickname"></span>
+                <input type="text" placeholder="Username" />
+            </div>
+            <div class="inputText">
+                <span class="iconfont icon-visible"></span>
+                <input type="password" placeholder="Password" />
+            </div>
+        </div>
+        <input class="loginButton" type="button" value="Login" />
+
+        <div id="registration-link">
+            Don't have an account? <a style="color: #4CAF50;" href="/register">Register</a>
+        </div>
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url('../static/images/background.jpg');
+            /* 替换为你的背景图片路径 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* .container {
+            background: rgba(255, 255, 255, 0.8);
+            /* 设置容器的背景颜色和透明度 */
+        /* padding: 20px;
+            border-radius: 10px; */
+        /* width: 600px; */
+        /* } */
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 卡片背景颜色添加透明度 */
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="text-center">Login</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            <div class="alert alert-{{ messages[0].split(' ')[0] }}" role="alert">
+                                {{ messages[0] }}
+                            </div>
+                            {% endif %}
+                            {% endwith %}
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Login</button>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        Don't have an account? <a href="{{ url_for('register') }}">Register</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

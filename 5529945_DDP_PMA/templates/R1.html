@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+
+        .restaurant-images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            overflow: hidden;
+            border-radius: 0px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .restaurant-images img {
+            width: 100%;
+            border-radius: 0px;
+        }
+
+
+
+        .restaurant-details {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .details-section {
+            margin-top: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            margin: 0;
+            color: #555;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .book-table-btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .book-table-btn:hover {
+            background-color: #555;
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .details-section h2,
+        .contact-info h2 {
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .details-section p,
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Restaurant Name</h1>
+    </header>
+
+    <div class="restaurant-images">
+        <img class="restaurant-image" src="static\images\R1.jpg" alt="Restaurant Image" height="450px">
+        <!-- <img src="static\images\logo.png" alt="Restaurant Logo"> -->
+    </div>
+
+    <div class="restaurant-details">
+
+        <div class="details-section">
+            <h2><img class="icon" src="static/images/clock.png" alt="Clock Icon"> Opening Hours</h2>
+            <p>Monday - Friday: 9:00 AM - 10:00 PM</p>
+            <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+
+            <h2><img class="icon" src="static/images/description.png" alt="Description Icon"> Description</h2>
+            <p>Welcome to our wonderful restaurant. We offer a diverse menu with delicious dishes prepared with care and
+                passion.</p>
+
+            <h2><img class="icon" src="static/images/offers.png" alt="Offers Icon"> Offers</h2>
+            <p>Happy Hour: Enjoy discounted drinks from 5:00 PM to 7:00 PM every day!</p>
+            <p>Lunch Special: 20% off on all lunch menu items on weekdays.</p>
+        </div>
+
+        <div class="contact-info">
+            <h2><img class="icon" src="static/images/location.png" alt="Location Icon"> Location</h2>
+            <p>123 Main Street, Cityville, Country</p>
+
+            <h2><img class="icon" src="static/images/contact.png" alt="Contact Icon"> Contact Information</h2>
+            <p>Email: info@example.com</p>
+            <p>Phone: +1 123-456-7890</p>
+            <p>Follow us on <a href="https://www.instagram.com/example_restaurant" target="_blank">Instagram</a></p>
+        </div>
+
+        <button class="book-table-btn" onclick="window.location.href='/reserve'"><img class="icon"
+                src="static/images/book.png" alt="Book Icon"> Book a Table</button>
+
+    </div>
+
+
+
+</body>
+
+</html>

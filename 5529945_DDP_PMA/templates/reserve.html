@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation - Osteria</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Osteria</h1>
+    </header>
+
+    <div class="container">
+        <form method="POST" action="{{ url_for('submit_reserve') }}">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Contact Number</label>
+                <input type="tel" class="form-control" id="contact" name="contact" required>
+            </div>
+
+            <div class="form-group">
+                <label for="reservation_time">Reservation Date and Time</label>
+                <input type="datetime-local" class="form-control" id="reservation_time" name="reservation_time"
+                    required>
+            </div>
+
+            <div class="form-group">
+                <label for="num_people">Number of People</label>
+                <input type="number" class="form-control" id="num_people" name="num_people" required>
+            </div>
+
+            <button type="submit" onclick="window.location.href='/submit_reserve'">Book Table</button>
+        </form>
+    </div>
+
+    <div id="feedback-message">
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+    </div>
+
+    <footer>
+        &copy; 2024 Osteria. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

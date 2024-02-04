@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warwick Cuisine</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 18px;
+        }
+
+        .tags {
+            display: flex;
+            /* margin-bottom: 20px; */
+            margin-top: 18px;
+
+
+        }
+
+        .tag {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container {
+            display: flex;
+            margin-top: 18px;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: none;
+            width: 200px;
+            height: 15px;
+            border-radius: 5px;
+            margin-top: 11px;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            width: 15px;
+            height: 15px;
+            border-radius: 5px;
+            margin-top: 6px;
+            margin-left: 3px;
+            cursor: pointer;
+        }
+
+        .login-button {
+            /* background-color: #3498db; */
+            color: #fff;
+            position: relative;
+            /* padding: 8px 15px; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            left: -80px;
+            margin-top: 23px;
+            margin-left: 20px;
+
+        }
+
+        button img {
+            width: 20px;
+            height: 20px;
+
+        }
+
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        /* .restaurant {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 45px;
+            overflow: hidden;
+            width: 200px;
+            height: 360px;
+            transition: transform 0.3s ease-in-out;
+            flex: 1 0 150px;
+        } */
+
+        .restaurant {
+            width: 500px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .re_name {
+            color: #363636;
+        }
+
+        .restaurant:hover {
+            transform: scale(1.05);
+        }
+
+        .restaurant img {
+            display: block;
+            margin-left: 0;
+            width: 220px;
+            height: 200px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .location_icon {
+            margin-left: 30px !important;
+            width: 20px !important;
+            height: 20px !important;
+        }
+
+
+        .restaurant-info {
+            padding: 15px;
+        }
+
+        .paragraph {
+            margin-bottom: 13px;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        p {
+            margin: 0;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Warwick Cuisine</h1>
+        <div class="tags">
+            <div class="tag" onclick="filterRestaurants('all')">All</div>
+            <div class="tag" onclick="filterRestaurants('cafe')">Cafe</div>
+            <div class="tag" onclick="filterRestaurants('italian')">Italian</div>
+            <div class="tag" onclick="filterRestaurants('asian')">Asian</div>
+            <div class="tag" onclick="filterRestaurants('american')">American</div>
+
+        </div>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button onclick="searchRestaurants()">
+                <img src="static\images\search.png" />
+            </button>
+        </div>
+
+        <button class="login-button" onclick="window.location.href='/login'">
+            <img width="4px" height="4px" src="static\images\log_1.png" />
+        </button>
+
+    </header>
+
+    <section>
+        <div class="restaurant" data-categories="italian">
+            <img src="static\images\Italian1.jpg" alt="Restaurant 1">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="/restaurant details">
+                    <h2 class="re_name">Osteria</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Lord
+                    Bhattacharyya Building
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="italian">
+            <img src="static\images\Italian2.jpg" alt="Restaurant 2">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">Vita Trattoria</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Rootes Building
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="cafe">
+            <img src="static\images\Cafe1.jpg" alt="Restaurant 3">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">NAIC Café</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Medical school
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="cafe">
+            <img src="static\images\Cafe2.jpg" alt="Restaurant 4">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">Café Library</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Library
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="cafe">
+            <img src="static\images\Cafe3.jpg" alt="Restaurant 5">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">Caffè Nero</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Faculty of Arts
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="asian">
+            <img src="static\images\asian.jpg" alt="Restaurant 6">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">Jidong</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Ground floor,
+                    Students' Union Building (South)
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="american">
+            <img src="static\images\American1.jpg" alt="Restaurant 7">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">SPUD</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;The Oculus
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+        <div class="restaurant" data-categories="american">
+            <img src="static\images\American2.jpg" alt="Restaurant 8">
+            <div class="restaurant-info">
+                <a style="color: #363636;" href="">
+                    <h2 class="re_name">Aroma</h2>
+                </a>
+                <p class="paragraph"><img class="location_icon" src="static\images\location.png">&nbsp;Social Sciences
+                    building
+
+                </p>
+                <p class="paragraph">A diverse menu featuring classic Italian dishes, artisanal pasta, and flavorful
+                    espresso.</p>
+            </div>
+        </div>
+
+
+
+    </section>
+
+    <script>
+        function filterRestaurants(category) {
+            var restaurants = document.querySelectorAll('.restaurant');
+
+            restaurants.forEach(function (restaurant) {
+                var categories = restaurant.getAttribute('data-categories').split(',');
+
+                if (category === 'all' || categories.includes(category)) {
+                    restaurant.style.display = 'block';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+
+        function searchRestaurants() {
+            var input = document.getElementById('searchInput');
+            var filter = input.value.toUpperCase();
+            var restaurants = document.querySelectorAll('.restaurant');
+
+            restaurants.forEach(function (restaurant) {
+                var name = restaurant.querySelector('h2').innerText.toUpperCase();
+
+                if (name.indexOf(filter) > -1) {
+                    restaurant.style.display = 'block';
+                } else {
+                    restaurant.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
