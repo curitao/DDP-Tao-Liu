@@ -1,0 +1,42 @@
+.header-class {
+    background-color: #eee;
+    text-align: center;
+}
+
+#breadcrumbs {
+    list-style: none;
+    font-style: italic;
+    border: 2px;
+}
+
+#breadcrumbs ul li {
+    display: inline;
+    margin-right: 5px;
+}
+
+.menu-class {
+    font-style: italic;
+    border: 2px
+}
+
+.img-class {
+    display: block;
+    max-width: 100%;
+}
+
+#header-class2 {
+    text-align: center;
+
+}
+
+th {
+    border-bottom: 2px solid black;
+
+}
+
+td {
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    border-collapse: collapse;
+}
